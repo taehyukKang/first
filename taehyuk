@@ -1,0 +1,23 @@
+module Multiply_Add   (input      [7:0] In_A,
+                       input      [7:0] In_B,
+                       input      [7:0] In_C,
+                       input            Clock,
+                       output reg [7:0] Data_Out);
+
+
+  reg [7:0] Temp_A;
+  reg [7:0] Temp_B;
+  reg [7:0] Temp_C;
+
+  always @(posedge Clock)
+      begin
+
+        Temp_A <= In_A;
+        Temp_B <= In_B;
+        Temp_C <= In_C;
+
+        Data_Out <= (Temp_A * Temp_B) + Temp_C;
+
+      end
+
+endmodule
